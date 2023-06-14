@@ -5,21 +5,28 @@
     font-family: 'Nova Mono', monospace;
 }
 
+body {
+    background: linear-gradient(to bottom, #487e95, #3c7997, #327498, #296e9a, #23689b);
+    overflow-x: hidden;
+}
+
 /* MAIN STYLES */
 main {
-    position: relative;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: 2rem;
     padding-bottom: 5rem;
     gap: 3.5rem;
 }
 
 main h1 {
-    font-size: 3rem;
+    color: #F5F0E3;
+    font-size: 2.5rem;
     text-transform: uppercase;
+    font-family: 'Righteous', cursive;
 }
 
 main .timer-container {
@@ -56,9 +63,9 @@ main .timer-container #milliseconds {
     display: none;
 }
 
-button {
+.buttons button {
     position: relative;
-    width: 140px;
+    width: 125px;
     border: none;
     background: transparent;
     padding: 0;
@@ -122,4 +129,20 @@ button:active .shadow {
 
 button:focus:not(:focus-visible) {
     outline: none;
+}
+
+@media screen and (min-width: 30em) {
+    main h1 {
+        font-size: 3.5rem;
+        letter-spacing: 4px;
+    }
+
+    main .timer-container {
+        display: flex;
+        font-size: 4rem;
+    }
+
+    .buttons button {
+        width: 140px;
+    }
 }
