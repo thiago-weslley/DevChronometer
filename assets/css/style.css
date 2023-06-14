@@ -58,6 +58,7 @@ main .timer-container #milliseconds {
 
 button {
     position: relative;
+    width: 140px;
     border: none;
     background: transparent;
     padding: 0;
