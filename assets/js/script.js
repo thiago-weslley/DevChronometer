@@ -62,6 +62,8 @@ const continueTimer = () => {
 const resetTimer = () => {
     clearInterval(chonometer);
 
+    isPaused = false;
+    
     minutes = 0;
     seconds = 0;
     milliseconds = 0;
