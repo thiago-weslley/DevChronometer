@@ -22,11 +22,25 @@ main {
     gap: 3.5rem;
 }
 
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    padding-bottom: 22px;
+    width: 4rem;
+    filter: drop-shadow(2px -1px 1px rgba(0, 0, 0, .5));
+}
+
 main h1 {
+    filter: drop-shadow(5px 3px 1px rgba(0, 0, 0, .8));
     color: #F5F0E3;
     font-size: 2.5rem;
     text-transform: uppercase;
     font-family: 'Righteous', cursive;
+    overflow-x: hidden;
 }
 
 main .timer-container {
@@ -129,6 +143,12 @@ button:active .shadow {
 
 button:focus:not(:focus-visible) {
     outline: none;
+}
+
+@media screen and (min-width: 22em) {
+    .title {
+        flex-direction: row;
+    }
 }
 
 @media screen and (min-width: 30em) {
