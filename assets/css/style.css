@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nova Mono', monospace;
+}
+
+/* MAIN STYLES */
+main {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5rem;
+    gap: 3.5rem;
+}
+
+main h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+main .timer-container {
+    display: flex;
+    font-size: 3.5rem;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    gap: 10px;
+    user-select: none;
+}
+
+main .timer-container .time {
+    color: #09193a;
+}
+
+main .timer-container .separator {
+    color: #a01659;
+}
+
+main .timer-container #milliseconds {
+    padding-top: 12px;
+    font-size: 2.2rem;
+}
+
+/* BUTTON STYLES */
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.buttons #stop-button,
+.buttons #continue-button {
+    display: none;
+}
+
+button {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(to left,
+            hsl(340deg 100% 16%) 0%,
+            hsl(340deg 100% 32%) 8%,
+            hsl(340deg 100% 32%) 92%,
+            hsl(340deg 100% 16%) 100%);
+}
+
+.front {
+    display: block;
+    position: relative;
+    padding: 12px 27px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    color: white;
+    background: hsl(345deg 100% 47%);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+button:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+}
+
+
+button:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+}
+
+button:focus:not(:focus-visible) {
+    outline: none;
+}
